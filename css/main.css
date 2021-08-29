@@ -27,6 +27,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+html {
+  height: 100%;
+}
+
 ol, ul {
   list-style: none;
 }
@@ -137,12 +141,35 @@ h3 {
   font-size: 25px;
 }
 
+.heart .state_2 {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
 .heart .state_1 {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heart:hover i.state_2 {
   opacity: 0;
 }
 
+.heart:hover i.state_1 {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .restaurant__heart {
-  top: 25px;
+  top: 276px;
 }
 
 .header__acceuil {
@@ -242,11 +269,10 @@ h3 {
   border-radius: 1.5em;
   -webkit-box-shadow: 0px 3px 10px #dfdfdf;
           box-shadow: 0px 3px 10px #dfdfdf;
-}
-
-.fonctionnement__card:hover {
-  background-color: rgba(147, 86, 220, 0.1);
-  color: #9356DC;
+  /*&:hover {
+      
+      color: $primary-color;
+     }*/
 }
 
 .fonctionnement__card__numero {
@@ -268,9 +294,16 @@ h3 {
   color: grey;
   font-size: 20px;
   text-align: center;
+  /*&:hover {
+          color: $primary-color;
+        }*/
 }
 
-.fonctionnement i:hover {
+.test_hover:hover a.fonctionnement__card {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+
+.test_hover:hover a.fonctionnement__card i, .test_hover:hover a.fonctionnement__card .fonctionnement__card__texte {
   color: #9356DC;
 }
 
@@ -332,6 +365,7 @@ h3 {
 
 footer {
   background-color: #353535;
+  padding-bottom: 20px !important;
 }
 
 footer h4 {
@@ -392,6 +426,8 @@ footer a i {
 }
 
 .intro_image img {
+  position: absolute;
+  z-index: -1;
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
@@ -399,8 +435,7 @@ footer a i {
 }
 
 .menu {
-  position: relative;
-  top: -50px;
+  margin-top: 200px;
   background-color: #f6f6f6;
   border-radius: 30px 30px 0px 0px;
   padding-bottom: 40px;
@@ -446,6 +481,8 @@ footer a i {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 90%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .menu__card__description p {
@@ -455,6 +492,8 @@ footer a i {
   width: 85%;
   font-size: 0.9em;
   font-weight: lighter;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .menu__card__description .prix {
@@ -464,6 +503,21 @@ footer a i {
   -ms-flex-item-align: end;
       align-self: flex-end;
   top: 23px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu__card__description .green_check {
+  z-index: -1;
+  position: absolute;
+  right: -40px;
+  height: 66px;
+  width: 0px;
+  background-color: #99E2D0;
+  border-top-right-radius: 1.4em;
+  border-bottom-right-radius: 1.4em;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .menu__card__description .fa-check-circle {
@@ -471,18 +525,40 @@ footer a i {
   opacity: 0;
   font-size: 21px;
   position: relative;
-  right: -40px;
+  right: -35px;
   top: -8px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  -webkit-transition: all .4s .1s ease-in-out;
+  transition: all .4s .1s ease-in-out;
 }
 
-.menu__card__description .green_check {
-  z-index: -1;
-  position: absolute;
-  right: -40px;
-  height: 60px;
-  width: 0px;
-  background-color: #99E2D0;
+.menu__card__description:hover h3 {
+  width: 70%;
+}
+
+.menu__card__description:hover p {
+  width: 70%;
+}
+
+.menu__card__description:hover .prix {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.menu__card__description:hover .green_check {
+  z-index: 1;
+  opacity: 0.9;
+  -webkit-transform: translateX(-60px);
+          transform: translateX(-60px);
+  width: 60px;
+}
+
+.menu__card__description:hover i {
+  z-index: 2;
+  -webkit-transform: translateX(-40px) rotate(-360deg);
+          transform: translateX(-40px) rotate(-360deg);
+  opacity: 1;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
