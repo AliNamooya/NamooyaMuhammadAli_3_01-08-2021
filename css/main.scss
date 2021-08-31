@@ -508,10 +508,8 @@ footer {
       height: 66px;
       width: 0px;
       background-color: #99E2D0;
-      border-top-right-radius:1.4em ;
-      border-bottom-right-radius: 1.4em;
       transition: all .5s ease-in-out;
-      }
+    }
 
     .fa-check-circle {
     color: white;
@@ -544,9 +542,10 @@ footer {
 
   .green_check {
     z-index: 1;
-    opacity: 0.9;
     transform: translateX(-60px);
     width: 60px;
+    border-top-right-radius:1.4em ;
+    border-bottom-right-radius: 1.4em;
     
   }
 
@@ -559,3 +558,201 @@ footer {
 
   
 }
+/* animation fondu */
+
+.entrees {
+  animation: fadein 2000ms;
+  -moz-animation: fadein 2000ms; /* Firefox */
+  -webkit-animation: fadein 2000ms; /* Safari and Chrome */
+}
+
+.plats {
+  animation: fadein 3000ms;
+  -moz-animation: fadein 3000ms; /* Firefox */
+  -webkit-animation: fadein 3000ms; /* Safari and Chrome */
+}
+
+.desserts {
+  animation: fadein 4000ms;
+  -moz-animation: fadein 4000ms; /* Firefox */
+  -webkit-animation: fadein 4000ms; /* Safari and Chrome */
+}
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+/* spinner animation */
+
+/*
+.spin-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  
+
+  .spinner{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: 3px solid transparent;
+    border-top-color: $secondary-color;
+    top: 50%;
+    left: 50%;
+    margin: -50px;
+    border-radius: 50%;
+    animation: spin 3.1s linear;
+    
+    &:before, &:after{
+      content:'';
+      position: absolute;
+      border: 3px solid transparent;
+      border-radius: 50%;
+    }
+    
+    &:before{
+      border-top-color: $primary-color;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      animation: spin 3.5s linear;
+    }
+    
+    &:after{
+      border-top-color: $third-color;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;  
+      animation: spin 3.5s linear;
+    }
+  }
+}
+
+@keyframes spin{
+  0% {transform: rotate(0deg);}
+  99% {transform: rotate(360deg)}
+  100% {z-index: -3;}
+}
+
+.page {
+  animation: pop 3.5s linear;
+}
+
+@keyframes pop{
+  from {
+    opacity:0;
+}
+to {
+    opacity:1;
+}
+}
+*/
+
+
+@media screen and (min-width: 526px) and (max-width: 1439px){
+
+
+
+  .test_hover{
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+
+    .fonctionnement__card__numero {
+      position: relative;
+      left: -10px;
+    }
+  }
+  
+
+  .restaurant {
+    margin: auto;
+
+    &__card_wrapper {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 90%;
+      margin: auto;
+      gap: 30px;
+
+      .restaurant__card {
+        height: 250px;
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media  screen and (min-width:1440px) {
+  .aside {
+    width: 100%;
+
+    .localisation {
+    width: 30%;
+    margin: auto;
+    margin-bottom: 20px;
+    background: transparent;
+    box-shadow: 0px 0px 0px;
+    }
+
+    .introduction {
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    width: 40%;
+    }
+
+  }
+  
+  .fonctionnement {
+    width: 100%;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+
+      li {
+        width: 30%;
+
+        .fonctionnement__card__numero {
+          position: relative;
+          margin-left: -20px;
+        }
+      }
+    }
+  }
+
+.restaurant__card_wrapper {
+  display: flex;
+
+  .restaurant__card {
+    width: 30%;
+    margin: 20px;
+  }
+}
+}
+
