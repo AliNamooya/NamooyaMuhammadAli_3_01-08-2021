@@ -465,6 +465,7 @@ footer {
 
   &__card__description {
     height: 66px;
+    position: relative;
     background-color: white;
     display: flex;
     flex-flow: column wrap;
@@ -496,30 +497,30 @@ footer {
       font-weight: bold;
       position: relative;
       align-self: flex-end;
-      top: 23px;
-      transition: all .5s ease-in-out;
+      top: 5px;
+      transition: all .3s ease-in-out;
     }
 
 
     .green_check {
-      z-index: -1;
-      position: absolute;
-      right: -40px;
-      height: 66px;
-      width: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #99E2D0;
-      transition: all .5s ease-in-out;
+      width: 60px;
+      height: 100%;
+      position: absolute;
+      padding: 20px;
+      right: -25px;
+      top: 0;
+      opacity: 0;
+      transition: transform 330ms ease-in-out;
     }
 
     .fa-check-circle {
-    color: white;
-    opacity: 0;
-    font-size: 21px;
-    position: relative;
-    right: -35px;
-    top: -8px;
-    align-self: flex-end;
-    transition: all .4s .1s ease-in-out;
+      color: #fff;
+      transition: transform 500ms ease-in-out;
+      font-size: 1.5em;
     }
 
     
@@ -537,25 +538,18 @@ footer {
   }
 
   .prix {
-    transform: translateX(-50px);
+    transform: translate(-55px);
   }
-
-  .green_check {
-    z-index: 1;
-    transform: translateX(-60px);
-    width: 60px;
-    border-top-right-radius:1.4em ;
-    border-bottom-right-radius: 1.4em;
-    
+  
+  .green_check{
+    opacity: 1;
+    transform: translate(-25px);
   }
 
   i {
-    z-index: 2;
-    transform: translateX(-40px) rotate(-360deg);
-    opacity: 1; 
-    color: white;
+    transform: rotate(360deg);
   }
-
+  
   
 }
 /* animation fondu */
@@ -604,7 +598,7 @@ footer {
 
 /* spinner animation */
 
-/*
+
 .spin-wrapper{
   position: absolute;
   width: 100%;
@@ -622,7 +616,7 @@ footer {
     left: 50%;
     margin: -50px;
     border-radius: 50%;
-    animation: spin 3.1s linear;
+    animation: spin 3s linear forwards;
     
     &:before, &:after{
       content:'';
@@ -637,7 +631,7 @@ footer {
       left: -12px;
       right: -12px;
       bottom: -12px;
-      animation: spin 3.5s linear;
+      animation: spin 3.5s linear forwards;
     }
     
     &:after{
@@ -646,30 +640,41 @@ footer {
       left: 6px;
       right: 6px;
       bottom: 6px;  
-      animation: spin 3.5s linear;
+      animation: spin 4s linear forwards;
     }
   }
 }
 
 @keyframes spin{
-  0% {transform: rotate(0deg);}
-  99% {transform: rotate(360deg)}
-  100% {z-index: -3;}
+  0% {
+    transform: rotate(0deg);
+    z-index: 9;
+  }
+  99% {
+    transform: rotate(360deg);
+    z-index: 9;
+  }
+  100% {
+    z-index: -3;
+    opacity: 0;
+  }
 }
 
-.page {
-  animation: pop 3.5s linear;
+.chargement {
+  animation: pop 0.5s linear forwards;
+  animation-delay: 1.9s;
+  opacity: 0;
 }
 
 @keyframes pop{
   from {
     opacity:0;
-}
-to {
+  }
+  to {
     opacity:1;
+  }
 }
-}
-*/
+
 
 
 @media screen and (min-width: 526px) and (max-width: 1439px){
@@ -697,7 +702,7 @@ to {
       flex-wrap: wrap;
       max-width: 90%;
       margin: auto;
-      gap: 30px;
+      gap: 20px;
 
       .restaurant__card {
         height: 250px;
@@ -746,13 +751,66 @@ to {
     }
   }
 
-.restaurant__card_wrapper {
+ .restaurant__card_wrapper {
   display: flex;
 
   .restaurant__card {
     width: 30%;
     margin: 20px;
   }
-}
+ }
+
+ footer {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+
+   h4 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+   }
+  
+ }
+
+ /* menu */
+
+ .menu {
+   background-color: white;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   width: 100%;
+   border-radius: 0;
+
+   .main-title {
+     width: 100%;
+   }
+
+   .entrees {
+     width: 30%;
+   }
+
+   .plats {
+     width: 30%;
+
+   }
+
+
+   .desserts {
+     width: 30%;
+
+   }
+
+   .menu_btn {
+     width: 25%;
+     font-size: 1.5em;
+   }
+
+
+ }
+
+ 
 }
 

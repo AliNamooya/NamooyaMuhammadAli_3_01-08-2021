@@ -457,6 +457,7 @@ footer a i {
 
 .menu__card__description {
   height: 66px;
+  position: relative;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -502,33 +503,42 @@ footer a i {
   position: relative;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  top: 23px;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  top: 5px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .menu__card__description .green_check {
-  z-index: -1;
-  position: absolute;
-  right: -40px;
-  height: 66px;
-  width: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #99E2D0;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  padding: 20px;
+  right: -25px;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 330ms ease-in-out;
+  transition: -webkit-transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
 }
 
 .menu__card__description .fa-check-circle {
-  color: white;
-  opacity: 0;
-  font-size: 21px;
-  position: relative;
-  right: -35px;
-  top: -8px;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-transition: all .4s .1s ease-in-out;
-  transition: all .4s .1s ease-in-out;
+  color: #fff;
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  font-size: 1.5em;
 }
 
 .menu__card__description:hover h3 {
@@ -540,25 +550,19 @@ footer a i {
 }
 
 .menu__card__description:hover .prix {
-  -webkit-transform: translateX(-50px);
-          transform: translateX(-50px);
+  -webkit-transform: translate(-55px);
+          transform: translate(-55px);
 }
 
 .menu__card__description:hover .green_check {
-  z-index: 1;
-  -webkit-transform: translateX(-60px);
-          transform: translateX(-60px);
-  width: 60px;
-  border-top-right-radius: 1.4em;
-  border-bottom-right-radius: 1.4em;
+  opacity: 1;
+  -webkit-transform: translate(-25px);
+          transform: translate(-25px);
 }
 
 .menu__card__description:hover i {
-  z-index: 2;
-  -webkit-transform: translateX(-40px) rotate(-360deg);
-          transform: translateX(-40px) rotate(-360deg);
-  opacity: 1;
-  color: white;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 /* animation fondu */
@@ -606,72 +610,114 @@ footer a i {
 }
 
 /* spinner animation */
-/*
-.spin-wrapper{
+.spin-wrapper {
   position: absolute;
   width: 100%;
   height: 100%;
   margin: auto;
-  
+}
 
-  .spinner{
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    border: 3px solid transparent;
-    border-top-color: $secondary-color;
-    top: 50%;
-    left: 50%;
-    margin: -50px;
-    border-radius: 50%;
-    animation: spin 3.1s linear;
-    
-    &:before, &:after{
-      content:'';
-      position: absolute;
-      border: 3px solid transparent;
-      border-radius: 50%;
-    }
-    
-    &:before{
-      border-top-color: $primary-color;
-      top: -12px;
-      left: -12px;
-      right: -12px;
-      bottom: -12px;
-      animation: spin 3.5s linear;
-    }
-    
-    &:after{
-      border-top-color: $third-color;
-      top: 6px;
-      left: 6px;
-      right: 6px;
-      bottom: 6px;  
-      animation: spin 3.5s linear;
-    }
+.spin-wrapper .spinner {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border: 3px solid transparent;
+  border-top-color: #FF79DA;
+  top: 50%;
+  left: 50%;
+  margin: -50px;
+  border-radius: 50%;
+  -webkit-animation: spin 3s linear forwards;
+          animation: spin 3s linear forwards;
+}
+
+.spin-wrapper .spinner:before, .spin-wrapper .spinner:after {
+  content: '';
+  position: absolute;
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+
+.spin-wrapper .spinner:before {
+  border-top-color: #9356DC;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  -webkit-animation: spin 3.5s linear forwards;
+          animation: spin 3.5s linear forwards;
+}
+
+.spin-wrapper .spinner:after {
+  border-top-color: #99E2D0;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  -webkit-animation: spin 4s linear forwards;
+          animation: spin 4s linear forwards;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    z-index: 9;
+  }
+  99% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    z-index: 9;
+  }
+  100% {
+    z-index: -3;
+    opacity: 0;
   }
 }
 
-@keyframes spin{
-  0% {transform: rotate(0deg);}
-  99% {transform: rotate(360deg)}
-  100% {z-index: -3;}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    z-index: 9;
+  }
+  99% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    z-index: 9;
+  }
+  100% {
+    z-index: -3;
+    opacity: 0;
+  }
 }
 
-.page {
-  animation: pop 3.5s linear;
+.chargement {
+  -webkit-animation: pop 0.5s linear forwards;
+          animation: pop 0.5s linear forwards;
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+  opacity: 0;
 }
 
-@keyframes pop{
+@-webkit-keyframes pop {
   from {
-    opacity:0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-to {
-    opacity:1;
+
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-}
-*/
+
 @media screen and (min-width: 526px) and (max-width: 1439px) {
   .test_hover {
     margin: auto;
@@ -695,7 +741,7 @@ to {
         flex-wrap: wrap;
     max-width: 90%;
     margin: auto;
-    gap: 30px;
+    gap: 20px;
   }
   .restaurant__card_wrapper .restaurant__card {
     height: 250px;
@@ -746,6 +792,56 @@ to {
   .restaurant__card_wrapper .restaurant__card {
     width: 30%;
     margin: 20px;
+  }
+  footer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer h4 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  /* menu */
+  .menu {
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    border-radius: 0;
+  }
+  .menu .main-title {
+    width: 100%;
+  }
+  .menu .entrees {
+    width: 30%;
+  }
+  .menu .plats {
+    width: 30%;
+  }
+  .menu .desserts {
+    width: 30%;
+  }
+  .menu .menu_btn {
+    width: 25%;
+    font-size: 1.5em;
   }
 }
 /*# sourceMappingURL=main.css.map */
