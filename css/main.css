@@ -126,6 +126,13 @@ h3 {
   border-radius: 1.5em;
   -webkit-box-shadow: 3px 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 3px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.btn_gradient:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
 }
 
 .heart {
@@ -269,10 +276,6 @@ h3 {
   border-radius: 1.5em;
   -webkit-box-shadow: 0px 3px 10px #dfdfdf;
           box-shadow: 0px 3px 10px #dfdfdf;
-  /*&:hover {
-      
-      color: $primary-color;
-     }*/
 }
 
 .fonctionnement__card__numero {
@@ -330,13 +333,19 @@ h3 {
 
 .restaurant__card {
   width: 100%;
-  height: 245px;
   background-color: white;
   -webkit-box-shadow: 0px 3px 10px #dfdfdf;
           box-shadow: 0px 3px 10px #dfdfdf;
   border-radius: 1.1em;
   margin-bottom: 15px;
   position: relative;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.restaurant__card:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
 }
 
 .restaurant__card img {
@@ -349,7 +358,7 @@ h3 {
 }
 
 .restaurant__card__description {
-  padding: 20px 0 10px 10px;
+  padding: 10px 0 10px 10px;
   width: 70%;
 }
 
@@ -386,24 +395,28 @@ footer a {
 
 footer a i {
   margin-right: 8px;
-  width: 6%;
+  width: 2%;
 }
 
 /* La palette du gout  */
 .header__restaurant {
   width: 100%;
   height: 50px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header__restaurant .arrow {
-  padding-left: 20px;
-  margin-right: 80px;
+  position: absolute;
+  left: 5px;
 }
 
 .header__restaurant .logo {
@@ -611,9 +624,10 @@ footer a i {
 
 /* spinner animation */
 .spin-wrapper {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
+  vertical-align: middle;
   margin: auto;
 }
 
@@ -693,8 +707,8 @@ footer a i {
 }
 
 .chargement {
-  -webkit-animation: pop 0.5s linear forwards;
-          animation: pop 0.5s linear forwards;
+  -webkit-animation: pop 0.3s linear forwards;
+          animation: pop 0.3s linear forwards;
   -webkit-animation-delay: 1.9s;
           animation-delay: 1.9s;
   opacity: 0;
@@ -718,7 +732,7 @@ footer a i {
   }
 }
 
-@media screen and (min-width: 526px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .test_hover {
     margin: auto;
     margin-top: 20px;
@@ -746,6 +760,18 @@ footer a i {
   .restaurant__card_wrapper .restaurant__card {
     height: 250px;
     width: 45%;
+  }
+  .entrees ul {
+    width: 90%;
+    margin: auto;
+  }
+  .plats ul {
+    width: 90%;
+    margin: auto;
+  }
+  .desserts ul {
+    width: 90%;
+    margin: auto;
   }
 }
 
@@ -813,7 +839,18 @@ footer a i {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  footer ul {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+  }
+  footer i {
+    width: 2%;
+  }
   /* menu */
+  .intro_image {
+    margin-bottom: 300px;
+  }
   .menu {
     background-color: white;
     display: -webkit-box;
@@ -824,11 +861,15 @@ footer a i {
             justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     border-radius: 0;
   }
   .menu .main-title {
-    width: 100%;
+    width: 30%;
+    position: relative;
+    margin-left: 35%;
+    margin-right: 35%;
   }
   .menu .entrees {
     width: 30%;
@@ -842,6 +883,9 @@ footer a i {
   .menu .menu_btn {
     width: 25%;
     font-size: 1.5em;
+  }
+  .restaurant__heart {
+    top: 25px;
   }
 }
 /*# sourceMappingURL=main.css.map */
