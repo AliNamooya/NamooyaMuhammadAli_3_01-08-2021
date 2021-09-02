@@ -519,6 +519,8 @@ footer {
       position: absolute;
       padding: 20px;
       right: -25px;
+      border-top-right-radius: 1.4em;
+      border-bottom-right-radius: 1.4em;
       top: 0;
       opacity: 0;
       transition: transform 330ms ease-in-out;
