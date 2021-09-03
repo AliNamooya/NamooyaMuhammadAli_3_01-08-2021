@@ -1,0 +1,173 @@
+
+.heart {
+     
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  height: 25px;
+  width: 25px;
+
+.fa-heart {
+  position: absolute;
+  font-size: 25px;
+}
+
+.state_2 {
+  transition: all .5s ease-in-out;
+}
+
+.state_1 {
+  opacity: 0;
+  transform: scale(0);
+  transition: all .3s ease-in-out;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+}
+
+.heart:hover{
+i.state_2{
+  opacity: 0;
+}
+
+i.state_1 {
+  opacity: 1;
+  transform: scale(1);
+}
+}
+
+
+
+
+.restaurant__heart {
+top: 276px;
+}
+
+
+
+/* animation fondu */
+
+.entrees {
+  animation: fadein 2000ms;
+  -moz-animation: fadein 2000ms; /* Firefox */
+  -webkit-animation: fadein 2000ms; /* Safari and Chrome */
+}
+
+.plats {
+  animation: fadein 3000ms;
+  -moz-animation: fadein 3000ms; /* Firefox */
+  -webkit-animation: fadein 3000ms; /* Safari and Chrome */
+}
+
+.desserts {
+  animation: fadein 4000ms;
+  -moz-animation: fadein 4000ms; /* Firefox */
+  -webkit-animation: fadein 4000ms; /* Safari and Chrome */
+}
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+
+/* spinner animation */
+
+
+.spin-wrapper{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  margin: auto;
+  
+
+  .spinner{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: 3px solid transparent;
+    border-top-color: $secondary-color;
+    top: 50%;
+    left: 50%;
+    margin: -50px;
+    border-radius: 50%;
+    animation: spin 3s linear forwards;
+    
+    &:before, &:after{
+      content:'';
+      position: absolute;
+      border: 3px solid transparent;
+      border-radius: 50%;
+    }
+    
+    &:before{
+      border-top-color: $primary-color;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      animation: spin 3.5s linear forwards;
+    }
+    
+    &:after{
+      border-top-color: $third-color;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;  
+      animation: spin 4s linear forwards;
+    }
+  }
+}
+
+@keyframes spin{
+  0% {
+    transform: rotate(0deg);
+    z-index: 9;
+  }
+  99% {
+    transform: rotate(360deg);
+    z-index: 9;
+  }
+  100% {
+    z-index: -3;
+    opacity: 0;
+  }
+}
+
+.chargement {
+  animation: pop 0.3s linear forwards;
+  animation-delay: 1.9s;
+  opacity: 0;
+}
+
+@keyframes pop{
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+

@@ -1,0 +1,8 @@
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Roboto', 'Shrikhand', cursive,sans-serif;
+}
+/*# sourceMappingURL=typography.css.map */

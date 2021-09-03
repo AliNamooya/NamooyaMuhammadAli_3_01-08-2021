@@ -1,0 +1,134 @@
+
+.main-title {
+  padding-top: 20px;
+  
+    h1 {
+      font-family: 'Shrikhand';
+      font-weight: bold;
+      font-size: 1.7em;
+      margin: 0;
+    }
+}
+
+.intro_image {
+  
+  img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+.menu{
+  margin-top: 200px;
+  background-color: #f6f6f6;
+  border-radius: 30px 30px 0px 0px;
+  padding-bottom: 40px;
+
+  .categorie_titre {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.1em;
+    margin-top: 20px;
+  }
+
+  .line {
+    display: block;
+    border-bottom: 3px solid $third-color;
+    width: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__card__description {
+    height: 66px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    border-radius: 1.4em;
+    box-shadow: 0px 3px 10px #dfdfdf;
+    padding: 10px;
+    padding-right: 15px;
+    margin: 10px 0px;
+    overflow: hidden;
+    
+    
+    h3 {
+      @include wrap_text;
+      width: 90%;
+      transition: all .5s ease-in-out;
+    }
+
+    p {
+      @include wrap_text;
+      width: 85%;
+      font-size: 0.9em;
+      font-weight: lighter;
+      transition: all .5s ease-in-out;
+    }
+
+    .prix {
+      font-size: 14px;
+      font-weight: bold;
+      position: relative;
+      align-self: flex-end;
+      top: 5px;
+      transition: all .3s ease-in-out;
+    }
+
+
+    .green_check {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #99E2D0;
+      width: 60px;
+      height: 100%;
+      position: absolute;
+      padding: 20px;
+      right: -25px;
+      border-top-right-radius: 1.4em;
+      border-bottom-right-radius: 1.4em;
+      top: 0;
+      opacity: 0;
+      transition: transform 330ms ease-in-out;
+    }
+
+    .fa-check-circle {
+      color: #fff;
+      transition: transform 500ms ease-in-out;
+      font-size: 1.5em;
+    }
+
+    
+  
+  }
+}
+
+.menu__card__description:hover {
+  h3 {
+    width: 70%;
+  }
+
+  p {
+    width: 70%;
+  }
+
+  .prix {
+    transform: translate(-55px);
+  }
+  
+  .green_check{
+    opacity: 1;
+    transform: translate(-25px);
+  }
+
+  i {
+    transform: rotate(360deg);
+  }
+  
+  
+}

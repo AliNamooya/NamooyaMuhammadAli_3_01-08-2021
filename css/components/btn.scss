@@ -1,0 +1,17 @@
+.btn_gradient {
+  width: 220px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: linear-gradient(to bottom right, $secondary-color, $primary-color);
+  border-radius: 1.5em;
+  box-shadow: 3px 4px 8px 0 rgba(0,0,0,0.2);
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.04);
+  }
+  
+}
